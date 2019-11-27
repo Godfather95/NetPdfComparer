@@ -1,5 +1,7 @@
 ﻿using Spire.Pdf;
+using System;
 using System.Drawing;
+using System.Linq;
 
 namespace NetPdfComparer
 {
@@ -16,10 +18,8 @@ namespace NetPdfComparer
             int Counter = 0;
 
             // Create Bitmaps
-            Bitmap BitmapOriginal = ReadBitmapFromPdf(FileName1);
-            Bitmap BitmapToCompare = ReadBitmapFromPdf(FileName2);
-            CompareMask = new Bitmap(BitmapOriginal.Width, BitmapOriginal.Height);
-
+            using Bitmap BitmapOriginal = ReadBitmapFromPdf(FileName1);
+            using Bitmap BitmapToCompare = ReadBitmapFromPdf(FileName2);
             // Compare Size
             if (BitmapOriginal.Width == BitmapToCompare.Width && BitmapOriginal.Height == BitmapToCompare.Height)
             {
@@ -35,26 +35,26 @@ namespace NetPdfComparer
                         if (PixelOriginal != PixelToCompare)
                         {
                             // Write into comparrison mask
-                            CompareMask.SetPixel(i, j, Color.Red);
+                            BitmapOriginal.SetPixel(i, j, Color.Red);
                             ErrorPixels++;
                             IsSamePdf = false;
                         }
                         else
                         {
                             // Write into comparrison mask
-                            CompareMask.SetPixel(i, j, Color.White);
                             CorrectPixels++;
                         }
                         Counter++;
                     }
                 }
             }
+            CompareMask = (Bitmap)BitmapOriginal.Clone();
             return IsSamePdf;
         }
 
         private static Bitmap ReadBitmapFromPdf(string PdfFile)
         {
-            PdfDocument pdfDocument = new PdfDocument();
+            using PdfDocument pdfDocument = new PdfDocument();
             pdfDocument.LoadFromFile(PdfFile);
             return (Bitmap)pdfDocument.SaveAsImage(0);
         }
