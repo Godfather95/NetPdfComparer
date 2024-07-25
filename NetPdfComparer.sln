@@ -1,11 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetPdfComparer", "NetPdfComparer\NetPdfComparer.csproj", "{CC0537CB-C6EA-4A32-BF5E-3E7CEDF6E0F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetPdfComparer", "NetPdfComparer\NetPdfComparer.csproj", "{CC0537CB-C6EA-4A32-BF5E-3E7CEDF6E0F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetPdfComparerExample", "NetPdfComparerExample\NetPdfComparerExample.csproj", "{227642D1-C8F4-4F57-A6F4-B0753307FBC0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetPdfComparerExample", "NetPdfComparerExample\NetPdfComparerExample.csproj", "{227642D1-C8F4-4F57-A6F4-B0753307FBC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{12547CF5-0EED-4B29-948C-879BDFEFBF40}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnetcore.yml = .github\workflows\dotnetcore.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
