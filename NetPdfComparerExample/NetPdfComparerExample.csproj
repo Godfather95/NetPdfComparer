@@ -1,17 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net7.0</TargetFramework>
-    <StartupObject>NetPdfComparerExample.Program</StartupObject>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>https://github.com/Godfather95/NetPdfComparer</PackageProjectUrl>
-    <Copyright>2022</Copyright>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.6.0" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NetPdfComparer\NetPdfComparer.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<StartupObject>NetPdfComparerExample.Program</StartupObject>
+		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+		<PackageProjectUrl>https://github.com/Godfather95/NetPdfComparer</PackageProjectUrl>
+		<Copyright>2024</Copyright>
+		<LangVersion>latest</LangVersion>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="CommandLineParser" Version="2.9.1" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\NetPdfComparer\NetPdfComparer.csproj" />
+	</ItemGroup>
 </Project>
